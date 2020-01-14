@@ -3,11 +3,14 @@ package es.ua.eps.proyectoopengl;
 import android.annotation.SuppressLint;
 import android.app.ActivityManager;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.pm.ConfigurationInfo;
 import android.graphics.Color;
 import android.opengl.GLSurfaceView;
 import android.os.Build;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.ScaleGestureDetector;
 import android.view.View;
@@ -17,6 +20,8 @@ import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
@@ -155,6 +160,40 @@ public class MainActivity extends AppCompatActivity {
         if (rendererSet) {
             glSurfaceView.onResume();
         }
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu,menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+
+        switch (item.getItemId()) {
+            case R.id.info:
+                buildAlertInfo();
+                break;
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
+    private void buildAlertInfo() {
+        final AlertDialog.Builder builder = new AlertDialog.Builder(this, R.style.MyDialogTheme);
+        builder.setTitle("Información de uso");
+        builder.setMessage("Con el gesto pinch se puede hacer zoom al modelo.\n\n"
+                + "Mediante el uso del seekBar se puede girar la cabeza.\n\n"
+                + "Arrastrando el dedo sobre el modelo, éste girará.");
+
+        builder.setPositiveButton("Aceptar", new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int id) {
+                //
+            }
+        });
+
+        builder.show();
     }
 
 

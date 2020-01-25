@@ -195,10 +195,10 @@ public class OpenGLRenderer implements Renderer {
 
 		// Lee un archivo 3DS desde un recurso
 		obj3DS_body = new Resource3DSReader();
-		obj3DS_body.read3DSFromResource(context, R.raw.minion_body);
+		obj3DS_body.read3DSFromResource(context, R.raw.minion_body_2);
 
 		obj3DS_head = new Resource3DSReader();
-		obj3DS_head.read3DSFromResource(context, R.raw.minion_head);
+		obj3DS_head.read3DSFromResource(context, R.raw.minion_head_2);
 
 	}
 

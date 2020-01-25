@@ -306,7 +306,7 @@ public class OpenGLRenderer implements Renderer {
 	private void drawBody() {
 		// Creamos la matriz del modelo
 		setIdentityM(modelMatrix, 0);
-		translateM(modelMatrix, 0, 0f, 0.0f, -5.0f);
+		translateM(modelMatrix, 0, 0f, 0.0f, -6.0f);
 
 		// Rotación alrededor del eje x e y
 		rotateM(modelMatrix, 0, rY, 0f, 1f, 0f);
@@ -351,7 +351,7 @@ public class OpenGLRenderer implements Renderer {
 	private void drawHead() {
 		// Creamos la matriz del modelo
 		setIdentityM(modelMatrix, 0);
-		translateM(modelMatrix, 0, 0f, 0.0f, -5.0f);
+		translateM(modelMatrix, 0, 0f, 0.0f, -6.0f);
 
 		// Rotación alrededor del eje x e y
 		rotateM(modelMatrix, 0, rY, 0f, 1f, 0f);
